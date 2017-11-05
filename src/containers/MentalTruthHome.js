@@ -65,25 +65,6 @@ class MentalTruthHome extends Component {
     // .then(response =>{
     //   this.setState(Object.assign({}, this.state, { results: true, gravity: 3 }))
     // });
-    axios.post({
-      method: 'post',
-      url: 'http://localhost:3000/stuff',
-      headers: {
-        'Content-Type': 'application/json; charset=utf-8',
-        'Channel-Type': 'Internet',
-        'mode': 'no-cors'
-      },
-      data: {
-        ipAddress:"199.244.214.104",
-        socialMediaInfo: {
-          "Twitter":"karan.thakker"
-        },
-        surveyResponse:"anxiety"
-      }	
-    })
-    .then(response =>{
-      this.setState(Object.assign({}, this.state, { results: true, gravity: 3 }))
-    });    
   }
 
   componentWillUpdate(nextProps, nextState) {
@@ -131,8 +112,7 @@ class MentalTruthHome extends Component {
               <Panel collapsible expanded={this.state.open}>
               <SurveyForm/>
             </Panel>
-            <Button type="submit" onClick={() => this.
-              ()}>
+            <Button type="submit" onClick={() => this.handleMentalTruthResponse()}>
                 Submit
             </Button>
             </Col>
